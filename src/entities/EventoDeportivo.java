@@ -1,5 +1,8 @@
 package entities;
 
+import java.time.Duration;
+import java.time.LocalDate;
+
 import model.ListasPrecios;
 
 public final class EventoDeportivo extends Evento {
@@ -7,8 +10,11 @@ public final class EventoDeportivo extends Evento {
 	private boolean internacional;
 	
 	//Constructor con parámetro
-	public EventoDeportivo(Deporte deporte, boolean internacional) {
+	public EventoDeportivo(String nombre, Duration duracionEvento, LocalDate fechaEvento, Deporte deporte, boolean internacional) {
 		super();
+		super.setNombre(nombre);
+		super.setDuracionEvento(duracionEvento);
+		super.setFechaEvento(fechaEvento);
 		this.deporte = deporte;
 		this.internacional = internacional;
 	}
@@ -39,12 +45,13 @@ public final class EventoDeportivo extends Evento {
 	}
 
 	
-
+	//toString
 	@Override
 	public String toString() {
 		return "deportivo, " + deporte.toString() + ", " + (internacional ? "internacional" : "nacional");
 	}
 
+	//Definición de método de la interfaz
 	@Override
 	public Entrada crearEntrada(Tipo tipoEntrada) {
 		ListasPrecios precios = new ListasPrecios();
@@ -54,7 +61,8 @@ public final class EventoDeportivo extends Evento {
 		}
 		
 		Entrada entradaDeportiva = new Entrada(tipoEntrada, precioEntrada);
-		// TODO Auto-generated method stub
+		entradaDeportiva.setEvento(this);
+
 		return entradaDeportiva;
 	}
 
