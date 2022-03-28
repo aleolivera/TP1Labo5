@@ -52,44 +52,4 @@ public class ListasPrecios {
 		}
 		return -1;
 	}
-	/*
-	public double getEntradaRecital(Tipo tipoEntrada) {
-		ListIterator<Precio> iterator = entradasPrecios.listIterator();
-		while(iterator.hasNext()) {
-			Precio p= iterator.next();
-			if(p.getTipoEntrada().getId()==tipoEntrada.getId() && p.getTipoEvento().getId()==1) {
-				return p.getImporte();
-			}
-		}
-		return -1;
-	}
-	
-	public double getEntradaTeatro() {
-		return entradasPrecios.get(2).getImporte();
-	}
-	*/
-	
-	public double getEntradaInfantil(Tipo tipoEntrada) {
-		ListIterator<Precio> iterator = entradasPrecios.listIterator();
-		while(iterator.hasNext()) {
-			Precio p= iterator.next();
-			if(p.getTipoEntrada().getId()==tipoEntrada.getId() && p.getTipoEvento().getId()==3) {
-				return p.getImporte();
-			}
-		}
-		return -1;
-	}
-	
-	/*
-	public double getEntradaDeporte(Tipo tipoEntrada) {
-		ListIterator<Precio> iterator = entradasPrecios.listIterator();
-		while(iterator.hasNext()) {
-			Precio p= iterator.next();
-			if(p.getTipoEntrada().getId()==tipoEntrada.getId() && p.getTipoEvento().getId()==4) {
-				return p.getImporte();
-			}
-		}
-		return -1;
-	}
-	*/
 }

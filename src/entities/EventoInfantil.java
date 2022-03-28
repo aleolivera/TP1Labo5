@@ -38,7 +38,7 @@ public final class EventoInfantil extends Evento{
 
 		//Consigo el precio del evento según su tipo de entrada y tipo de evento
 		ListasPrecios listaPrecios = new ListasPrecios();
-		double importeEntrada =	listaPrecios.getEntradaInfantil(tipoEntrada);
+		double importeEntrada =	listaPrecios.getImporte(new Tipo(3,"infantil"),tipoEntrada);
 		
 		//Creamos entrada
 		Entrada entrada = new Entrada(tipoEntrada, importeEntrada);

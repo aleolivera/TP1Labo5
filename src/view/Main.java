@@ -35,9 +35,10 @@ public class Main {
 		//Clase LocalDate
 		LocalDate fecha= LocalDate.of(2000, 3, 31);
 		System.out.println("es el dia: "+ fecha.toString());
-	
+		
+		//Creacion Evento Infantil
 		EventoInfantil eventoInfantil = new EventoInfantil(false,"El sapo Pepe", Duration.ofMinutes(45), LocalDate.of(2022, 5, 20));	
-		Entrada entradaInfantil1 = eventoInfantil.crearEntrada(new Tipo(1,"menor"));		
+		Entrada entradaInfantil1 = eventoInfantil.crearEntrada(new Tipo(1,"menor"));	
 		System.out.println(entradaInfantil1.toString());
 		
 	}
