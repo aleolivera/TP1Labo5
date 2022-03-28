@@ -67,8 +67,9 @@ public class ListasPrecios {
 	public double getEntradaTeatro() {
 		return entradasPrecios.get(2).getImporte();
 	}
+	*/
 	
-	public double getEntradaInfantiles(Tipo tipoEntrada) {
+	public double getEntradaInfantil(Tipo tipoEntrada) {
 		ListIterator<Precio> iterator = entradasPrecios.listIterator();
 		while(iterator.hasNext()) {
 			Precio p= iterator.next();
@@ -79,6 +80,7 @@ public class ListasPrecios {
 		return -1;
 	}
 	
+	/*
 	public double getEntradaDeporte(Tipo tipoEntrada) {
 		ListIterator<Precio> iterator = entradasPrecios.listIterator();
 		while(iterator.hasNext()) {

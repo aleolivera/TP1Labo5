@@ -7,5 +7,5 @@ import entities.Entrada;
 import entities.Tipo;
 
 public interface Ievento {
-	Entrada crearEntrada(Tipo tipoEntrada,Duration duracion,LocalDate fecha);
+	Entrada crearEntrada(Tipo tipoEntrada);
 }

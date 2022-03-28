@@ -4,6 +4,8 @@ import model.ListasPrecios;
 import java.time.Duration;
 import java.time.LocalDate;
 
+import entities.Entrada;
+import entities.EventoInfantil;
 import entities.Tipo;
 
 public class Main {
@@ -33,6 +35,10 @@ public class Main {
 		//Clase LocalDate
 		LocalDate fecha= LocalDate.of(2000, 3, 31);
 		System.out.println("es el dia: "+ fecha.toString());
+	
+		EventoInfantil eventoInfantil = new EventoInfantil(false,"El sapo Pepe", Duration.ofMinutes(45), LocalDate.of(2022, 5, 20));	
+		Entrada entradaInfantil1 = eventoInfantil.crearEntrada(new Tipo(1,"menor"));		
+		System.out.println(entradaInfantil1.toString());
 		
 	}
 

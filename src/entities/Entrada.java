@@ -1,30 +1,27 @@
 package entities;
 import interfaces.Ievento;
 
-import java.time.Duration;
-
 public class Entrada {
 	private Ievento evento;
 	private Tipo tipoEntrada;
 	private double importe;
-	private long Id;
+	private long id;
 	
 	private static long contador=0; 
 	
 	//constructor para los eventos en general
-	public Entrada(Ievento evento, Tipo tipoEntrada, double importe) {
+	public Entrada(Tipo tipoEntrada, double importe) {
 		super();
-		this.evento = evento;
 		this.tipoEntrada = tipoEntrada;
 		this.importe = importe;
 		
-		this.Id=++contador;
+		this.id=++contador;
 	}
 	
 	//constructor vacio
 	public Entrada() {
 		super();
-		this.Id=++contador;
+		this.id=++contador;
 	}
 
 	public Ievento getEvento() {
@@ -43,14 +40,6 @@ public class Entrada {
 		this.tipoEntrada = tipoEntrada;
 	}
 
-	public static long getContador() {
-		return contador;
-	}
-
-	public static void setContador(long contador) {
-		Entrada.contador = contador;
-	}
-
 	public double getImporte() {
 		return importe;
 	}
@@ -60,12 +49,12 @@ public class Entrada {
 	}
 	
 	public long getId() {
-		return Id;
+		return id;
 	}
 
 	@Override
 	public String toString() {
-		return "Entrada [evento=" + evento.toString() + ", tipoEntrada="
-				+ tipoEntrada + ", importe=" + importe + ", Id=" + Id + "]";
+		return "Entrada: evento=" + evento.toString() + ", tipo entrada="
+				+ tipoEntrada.getNombre() + ", importe=" + importe + ", Id de entrada=" + id;
 	}
 }
