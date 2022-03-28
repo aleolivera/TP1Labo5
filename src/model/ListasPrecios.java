@@ -6,7 +6,22 @@ import entities.Precio;
 import entities.Tipo;
 
 public class ListasPrecios {
-private ArrayList<Precio> entradasPrecios= new ArrayList<Precio>();
+	/*
+	 El array que tiene todos los precios estaria formado asi
+	 
+	 |     TIPO EVENTO      |      TIPO ENTRADA      | IMPORTE
+	 | id=1 nombre=recital  | id=1 nombre='generales'| 800
+	 | id=1 nombre=recital  | id=2 nombre='VIP'      | 1500
+	 | id=2 nombre=teatro   | id=1 nombre='fijo'     | 1350.50
+	 | id=3 nombre=infantil | id=1 nombre='menor'    | 250
+	 | id=3 nombre=infantil | id=2 nombre='mayor'    | 500
+	 | id=4 nombre=deporte  | id=1 nombre='futbol'   | 300
+	 | id=4 nombre=deporte  | id=2 nombre='rugby'    | 450
+	 | id=4 nombre=deporte  | id=3 nombre='jockey'   | 380
+	 
+	 */
+	
+	private ArrayList<Precio> entradasPrecios= new ArrayList<Precio>();
 	
 	public ListasPrecios() {
 		entradasPrecios.add(new Precio(new Tipo(1,"recital"),new Tipo(1,"generales"),800));
@@ -27,6 +42,17 @@ private ArrayList<Precio> entradasPrecios= new ArrayList<Precio>();
 		this.entradasPrecios = entradasPrecios;
 	}
 	
+	public double getImporte(Tipo tipoEvento, Tipo tipoEntrada) {
+		ListIterator<Precio> iterator = entradasPrecios.listIterator();
+		while(iterator.hasNext()) {
+			Precio p= iterator.next();
+			if(p.getTipoEntrada().getId()==tipoEntrada.getId() && p.getTipoEvento().getId()==tipoEvento.getId()) {
+				return p.getImporte();
+			}
+		}
+		return -1;
+	}
+	/*
 	public double getEntradaRecital(Tipo tipoEntrada) {
 		ListIterator<Precio> iterator = entradasPrecios.listIterator();
 		while(iterator.hasNext()) {
@@ -63,4 +89,5 @@ private ArrayList<Precio> entradasPrecios= new ArrayList<Precio>();
 		}
 		return -1;
 	}
+	*/
 }
