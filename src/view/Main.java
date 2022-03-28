@@ -4,7 +4,9 @@ import model.ListasPrecios;
 import java.time.Duration;
 import java.time.LocalDate;
 
+import entities.Deporte;
 import entities.Entrada;
+import entities.EventoDeportivo;
 import entities.EventoInfantil;
 import entities.Tipo;
 
@@ -41,6 +43,10 @@ public class Main {
 		Entrada entradaInfantil1 = eventoInfantil.crearEntrada(new Tipo(1,"menor"));	
 		System.out.println(entradaInfantil1.toString());
 		
+		//Creacion Evento Deportivo
+		EventoDeportivo eventoDeportivo = new EventoDeportivo("Final Copa América", Duration.ofMinutes(90), LocalDate.of(2022, 8, 25), new Deporte("futbol"), true);	
+		Entrada entradaDeportiva = eventoDeportivo.crearEntrada(new Tipo(1,"futbol"));	
+		System.out.println(entradaDeportiva.toString());
 	}
 
 }
