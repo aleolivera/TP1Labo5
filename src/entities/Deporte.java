@@ -6,6 +6,19 @@ public class Deporte {
 	
 	private static long contador = 0;
 	
+	//Constructor con parámetro
+	public Deporte(String nombre) {
+		super();
+		this.id = ++contador;
+		this.nombre = nombre;
+	}
+	
+	//Constructor sin parámetro
+	public Deporte() {
+		super();
+		this.id = ++contador;
+	}
+	
 	//Getters y setters
 	public long getId() {
 		return id;
@@ -20,23 +33,11 @@ public class Deporte {
 		this.nombre = nombre;
 	}
 	
-	//Constructor con parámetro
-	public Deporte(String nombre) {
-		super();
-		this.id = ++contador;
-		this.nombre = nombre;
-	}
-	
-	//Constructor sin parámetro
-	public Deporte() {
-		super();
-		this.id = ++contador;
-	}
 	
 	//toString
 	@Override
 	public String toString() {
-		return "Id deportivo= " + id + ", Tipo de deporte=" + nombre + " ";
+		return "Tipo de deporte=" + nombre + ", Id deportivo= " + id;
 	}
 	
 	

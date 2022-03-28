@@ -17,7 +17,7 @@ public class ListasPrecios {
 	 | id=3 nombre=infantil | id=2 nombre='mayor'    | 500
 	 | id=4 nombre=deporte  | id=1 nombre='futbol'   | 300
 	 | id=4 nombre=deporte  | id=2 nombre='rugby'    | 450
-	 | id=4 nombre=deporte  | id=3 nombre='jockey'   | 380
+	 | id=4 nombre=deporte  | id=3 nombre='hockey'   | 380
 	 
 	 */
 	
@@ -31,7 +31,7 @@ public class ListasPrecios {
 		entradasPrecios.add(new Precio(new Tipo(3,"infantil"),new Tipo(2,"mayor"),500));
 		entradasPrecios.add(new Precio(new Tipo(4,"deporte"),new Tipo(1,"futbol"),300));
 		entradasPrecios.add(new Precio(new Tipo(4,"deporte"),new Tipo(2,"rugby"),450));
-		entradasPrecios.add(new Precio(new Tipo(4,"deporte"),new Tipo(3,"jockey"),380));
+		entradasPrecios.add(new Precio(new Tipo(4,"deporte"),new Tipo(3,"hockey"),380));
 	}
 
 	public ArrayList<Precio> getEntradasPrecios() {
