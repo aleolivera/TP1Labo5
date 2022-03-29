@@ -3,11 +3,14 @@ import model.ListasPrecios;
 
 import java.time.Duration;
 import java.time.LocalDate;
-
+import java.util.ArrayList;
+import entities.Actor;
 import entities.Deporte;
 import entities.Entrada;
 import entities.EventoDeportivo;
 import entities.EventoInfantil;
+import entities.EventoTeatro;
+import entities.Genero;
 import entities.Tipo;
 
 public class Main {
@@ -47,6 +50,27 @@ public class Main {
 		EventoDeportivo eventoDeportivo = new EventoDeportivo("Final Copa América", Duration.ofMinutes(90), LocalDate.of(2022, 8, 25), new Deporte("futbol"), true);	
 		Entrada entradaDeportiva = eventoDeportivo.crearEntrada(new Tipo(1,"futbol"));	
 		System.out.println(entradaDeportiva.toString());
+		
+		//Clase Evento Teatro
+		ArrayList<Actor> actores = new ArrayList<Actor>();
+		Actor actor = new Actor();
+		actores.add(new Actor(1, "Julio Chavez"));
+		actores.add(new Actor(2, "Leticia Bredicce"));
+		actores.add(new Actor(3, "Ricardo Darin"));
+		
+		boolean validationActor = actor.ValidationArrayList(actores);
+		if(validationActor == false)
+		{
+			System.out.println("La cantidad de actores no debe ser mayor a tres");
+		}
+		else
+		{
+			EventoTeatro eventoTeatro = new EventoTeatro(actores, new Genero ("Dramaturgo"));
+			Entrada entradaTeatro = eventoTeatro.crearEntrada(new Tipo(1, "Teatro" ));
+			System.out.println(entradaTeatro.toString());
+		}
+
 	}
+	
 
 }

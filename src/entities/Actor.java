@@ -1,17 +1,19 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class Actor {
-	private long id;
+	private int id;
 	private String nombreActor;	
-	
-	public Actor(String nombreActor, long id) {
-		super();
-		this.nombreActor= nombreActor;
+
+
+	public Actor(int id, String nombreActor) {
 		this.id = id;
+		this.nombreActor = nombreActor;
 	}
-
+	
 	public Actor() {
-
+		
 	}
 
 	@Override
@@ -31,7 +33,17 @@ public class Actor {
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public boolean ValidationArrayList (ArrayList<Actor> actores)
+	{
+		if(actores.size()> 3)
+		{
+			return false;
+		}
+		
+		return true;
 	}
 }
