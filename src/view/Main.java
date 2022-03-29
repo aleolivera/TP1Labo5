@@ -3,11 +3,15 @@ import model.ListasPrecios;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
+import entities.Banda;
 import entities.Deporte;
 import entities.Entrada;
 import entities.EventoDeportivo;
 import entities.EventoInfantil;
+import entities.EventoRecital;
+import entities.Genero;
 import entities.Tipo;
 
 public class Main {
@@ -47,6 +51,14 @@ public class Main {
 		EventoDeportivo eventoDeportivo = new EventoDeportivo("Final Copa América", Duration.ofMinutes(90), LocalDate.of(2022, 8, 25), new Deporte("futbol"), true);	
 		Entrada entradaDeportiva = eventoDeportivo.crearEntrada(new Tipo(1,"futbol"));	
 		System.out.println(entradaDeportiva.toString());
+		
+		Banda banda = new Banda("mana",new Genero("rock"));
+		Banda banda2 = new Banda("soda estereo",new Genero("rock"));
+		ArrayList<Banda> bandaSopote=new ArrayList<>();
+		bandaSopote.add(banda);
+		EventoRecital eventoRecital = new EventoRecital("Cosquín Rock",Duration.ofMinutes(120),LocalDate.of(2022, 10, 10), new Banda("los Beatles",new Genero("rock")),bandaSopote);
+		 Entrada entradaRecital = eventoRecital.crearEntrada(new Tipo(1,"generales"));
+		 System.out.println(entradaRecital.toString());
 	}
 
 }
