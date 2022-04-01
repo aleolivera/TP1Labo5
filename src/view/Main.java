@@ -4,12 +4,21 @@ import model.ListasPrecios;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
+//<<<<<<< HEAD
 import entities.Actor;
+//=======
+
+import entities.Banda;
+///>>>>>>> edu
 import entities.Deporte;
 import entities.Entrada;
 import entities.EventoDeportivo;
 import entities.EventoInfantil;
+//<<<<<<< HEAD
 import entities.EventoTeatro;
+//=======
+import entities.EventoRecital;
+//>>>>>>> edu
 import entities.Genero;
 import entities.Tipo;
 
@@ -51,6 +60,7 @@ public class Main {
 		Entrada entradaDeportiva = eventoDeportivo.crearEntrada(new Tipo(1,"futbol"));	
 		System.out.println(entradaDeportiva.toString());
 		
+//<<<<<<< HEAD
 		//Clase Evento Teatro
 		ArrayList<Actor> actores = new ArrayList<Actor>();
 		Actor actor = new Actor();
@@ -70,6 +80,15 @@ public class Main {
 			System.out.println(entradaTeatro.toString());
 		}
 
+//=======
+		Banda banda = new Banda("mana",new Genero("rock"));
+		Banda banda2 = new Banda("soda estereo",new Genero("rock"));
+		ArrayList<Banda> bandaSopote=new ArrayList<>();
+		bandaSopote.add(banda);
+		EventoRecital eventoRecital = new EventoRecital("Cosquín Rock",Duration.ofMinutes(120),LocalDate.of(2022, 10, 10), new Banda("los Beatles",new Genero("rock")),bandaSopote);
+		 Entrada entradaRecital = eventoRecital.crearEntrada(new Tipo(1,"generales"));
+		 System.out.println(entradaRecital.toString());
+//>>>>>>> edu
 	}
 	
 
