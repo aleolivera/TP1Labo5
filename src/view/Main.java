@@ -1,24 +1,15 @@
 package view;
-import model.ListasPrecios;
-
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
-//<<<<<<< HEAD
 import entities.Actor;
-//=======
-
 import entities.Banda;
-///>>>>>>> edu
 import entities.Deporte;
 import entities.Entrada;
 import entities.EventoDeportivo;
 import entities.EventoInfantil;
-//<<<<<<< HEAD
 import entities.EventoTeatro;
-//=======
 import entities.EventoRecital;
-//>>>>>>> edu
 import entities.Genero;
 import entities.Tipo;
 
