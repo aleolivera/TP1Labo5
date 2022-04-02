@@ -18,7 +18,7 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return "Actor [id=" + id + ", nombreActor=" + nombreActor + "]";
+		return "Actor id= " + id + ", nombreActor= " + nombreActor;
 	}
 
 	public String getNombreActor() {

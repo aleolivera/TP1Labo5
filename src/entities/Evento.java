@@ -16,7 +16,6 @@ public abstract class Evento implements Ievento{
 	protected Evento() {
 		id=++contador;
 	}
-	//constructor
 	
 	//Getters y Setters inicio
 
@@ -44,13 +43,13 @@ public abstract class Evento implements Ievento{
 	}
 	//Getters y Setters fin
 	
-	
 	//Metodo toString inicio
 	@Override
 	public String toString() {
-		return "id de evento= " + id + ", nombre de evento= " + nombre + ", duracion evento (minutos)= " + duracionEvento.toMinutes() + ", fechaEvento="
+		return "id de evento: " + id + ", nombre de evento: " + nombre + ", duracion evento (minutos): " + duracionEvento.toMinutes() + ", fechaEvento:"
 				+ fechaEvento;
 	}
 	//Metodo toString fin
+	protected abstract void mostrarEvento();
 	
 }

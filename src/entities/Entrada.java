@@ -1,11 +1,10 @@
 package entities;
-import interfaces.Ievento;
 
 public class Entrada {
-	private Ievento evento;
+	private Evento evento;
 	private Tipo tipoEntrada;
 	private double importe;
-	private long id;
+	private final long id;
 	
 	private static long contador=0; 
 	
@@ -14,7 +13,6 @@ public class Entrada {
 		super();
 		this.tipoEntrada = tipoEntrada;
 		this.importe = importe;
-		
 		this.id=++contador;
 	}
 	
@@ -24,11 +22,11 @@ public class Entrada {
 		this.id=++contador;
 	}
 
-	public Ievento getEvento() {
+	public Evento getEvento() {
 		return evento;
 	}
 
-	public void setEvento(Ievento evento) {
+	public void setEvento(Evento evento) {
 		this.evento = evento;
 	}
 
@@ -54,7 +52,17 @@ public class Entrada {
 
 	@Override
 	public String toString() {
-		return "Entrada: evento=" + evento.toString() + ", tipo entrada="
-				+ tipoEntrada.getNombre() + ", importe=" + importe + ", Id de entrada=" + id;
+		return "Entrada: evento= " + evento.toString() + ", tipo entrada= "
+				+ tipoEntrada.getNombre() + ", importe= $" + importe + "-. , Id de entrada= " + id;
+	}
+	
+	public void mostrarEntrada() {
+		System.out.println("_______________ENTRADA____________");
+		this.evento.mostrarEvento();
+		System.out.println("----------------------------------");
+		System.out.println("Entrada Nº: " + this.id);
+		System.out.println("Tipo de entrada: " + this.tipoEntrada.getNombre());
+		System.out.println("importe: $"+ this.importe +"-.");
+		System.out.println("__________________________________");
 	}
 }

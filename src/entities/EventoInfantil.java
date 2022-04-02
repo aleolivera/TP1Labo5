@@ -55,5 +55,15 @@ public final class EventoInfantil extends Evento{
 		return "infantil, tieneSouvenir=" + (tieneSouvenir ? " si" : " no") + " , "+ super.toString();
 	}
 	// Metodo toString fin
+
+	@Override
+	protected void mostrarEvento() {
+		System.out.println("EVENTO INFANTIL");
+		System.out.println("Fecha del evento: " + getFechaEvento().toString());
+		System.out.println(getNombre().toUpperCase());
+		System.out.println("Duracion del evento: " + getDuracionEvento().toMinutes() +" min.");
+		System.out.println("Souvenir: "+ (this.tieneSouvenir ? "con souvenir" : "sin souvenir"));
+		
+	}
 	
 }

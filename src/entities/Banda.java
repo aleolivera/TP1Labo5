@@ -39,7 +39,7 @@ public class Banda {
 	}
 	@Override
 	public String toString() {
-		return "Banda " + nombre + ", genero=" + genero.getNombreGenero() + "";
+		return "Banda= " + nombre + ", genero= " + genero.getNombreGenero();
 		                       
 	}
 }

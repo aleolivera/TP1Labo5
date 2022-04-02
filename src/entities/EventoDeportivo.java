@@ -9,7 +9,6 @@ public final class EventoDeportivo extends Evento {
 	private Deporte deporte;
 	private boolean internacional;
 	
-	//Constructor con parámetro
 	public EventoDeportivo(String nombre, Duration duracionEvento, LocalDate fechaEvento, Deporte deporte, boolean internacional) {
 		super();
 		super.setNombre(nombre);
@@ -19,21 +18,17 @@ public final class EventoDeportivo extends Evento {
 		this.internacional = internacional;
 	}
 	
-	//Constructor sin parámetro
 	public EventoDeportivo() {
 		super();
 	}
 	
-	//Getters y setters
 	public Deporte getDeporte() {
 		return deporte;
 	}
 
-
 	public void setDeporte(Deporte deporte) {
 		this.deporte = deporte;
 	}
-
 
 	public boolean isInternacional() {
 		return internacional;
@@ -44,14 +39,11 @@ public final class EventoDeportivo extends Evento {
 		this.internacional = internacional;
 	}
 
-	
-	//toString
 	@Override
 	public String toString() {
 		return "deportivo, " + deporte.toString() + ", " + (internacional ? "internacional" : "nacional");
 	}
 
-	//Definición de método de la interfaz
 	@Override
 	public Entrada crearEntrada(Tipo tipoEntrada) {
 		ListasPrecios precios = new ListasPrecios();
@@ -64,6 +56,16 @@ public final class EventoDeportivo extends Evento {
 		entradaDeportiva.setEvento(this);
 
 		return entradaDeportiva;
+	}
+
+	@Override
+	protected void mostrarEvento() {
+		System.out.println("EVENTO DEPORTIVO");
+		System.out.println("Fecha del evento: " + getFechaEvento().toString());
+		System.out.println(getNombre());
+		System.out.println("Deporte: "+deporte.getNombre().toUpperCase());
+		System.out.println("Duracion del evento: " + getDuracionEvento().toMinutes() +" min.");
+		System.out.println("Evento de tipo: "+ (internacional ? "internacional" : "nacional"));
 	}
 
 }

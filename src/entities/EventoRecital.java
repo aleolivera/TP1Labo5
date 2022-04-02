@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import model.ListasPrecios;
 
@@ -12,7 +13,6 @@ public class EventoRecital extends Evento {
 	private Banda bandaPrincipal;
 	private ArrayList<Banda> bandasSoporte;
 	
-	//Constructor con parámetro
 	public EventoRecital(String nombre, Duration duracionEvento, LocalDate fechaEvento, Banda bandaPrincipal,ArrayList<Banda> bandasSoporte)
 	{
 		super();
@@ -50,7 +50,6 @@ public class EventoRecital extends Evento {
 		this.bandasSoporte = bandasSoporte;
 	}
 
-
 	@Override
 	public Entrada crearEntrada(Tipo tipoEntrada) {
 		      
@@ -62,6 +61,25 @@ public class EventoRecital extends Evento {
 
 		return entrada;
 	}
-	
 
+	@Override
+	protected void mostrarEvento() {
+		System.out.println("EVENTO RECITAL");
+		System.out.println("Fecha del evento: " + getFechaEvento().toString());
+		System.out.println(getNombre().toUpperCase());
+		System.out.println("Duracion del evento: " + getDuracionEvento().toMinutes() +" min.");
+		System.out.println("Banda principal: " + this.bandaPrincipal.getNombre());
+		System.out.println("Bandas soporte: ");
+		ListIterator<Banda> iterator = bandasSoporte.listIterator();
+		while(iterator.hasNext()) {
+			Banda aux = iterator.next();
+			System.out.print(aux.getNombre());
+			if(iterator.hasNext()) {
+				System.out.print(", ");
+			}
+			else {
+				System.out.println(".");
+			}
+		}
+	}
 }

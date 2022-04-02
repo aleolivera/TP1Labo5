@@ -37,7 +37,7 @@ public class Deporte {
 	//toString
 	@Override
 	public String toString() {
-		return "Tipo de deporte=" + nombre + ", Id deportivo= " + id;
+		return "Nombre de deporte= " + nombre + ", Id de deporte= " + id;
 	}
 	
 	

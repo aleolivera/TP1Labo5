@@ -1,5 +1,8 @@
 package entities;
+import java.time.Duration;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 import model.ListasPrecios;
 
@@ -8,8 +11,11 @@ public final class EventoTeatro extends Evento {
 	private Genero genero;
 	
 	//Constructor con parámetro
-	public EventoTeatro(ArrayList<Actor> listaActores, Genero genero) {
+	public EventoTeatro(ArrayList<Actor> listaActores, Genero genero,String nombre, Duration duracionEvento, LocalDate fechaEvento) {
 		super();
+		super.setNombre(nombre);
+		super.setDuracionEvento(duracionEvento);
+		super.setFechaEvento(fechaEvento);
 		this.genero= genero;
 		this.listaActores = listaActores;
 	}
@@ -55,6 +61,28 @@ public final class EventoTeatro extends Evento {
 		entrada.setEvento(this);
 		
 		return entrada;
+	}
+
+	@Override
+	protected void mostrarEvento() {
+		System.out.println("EVENTO TEATRO");
+		System.out.println("Fecha del evento: " + getFechaEvento().toString());
+		System.out.println(getNombre().toUpperCase());
+		System.out.println("Duracion del evento: " + getDuracionEvento().toMinutes() +" min.");
+		System.out.println("Genero: " + this.genero.getNombreGenero());
+		System.out.println("Actores Principales: ");
+		ListIterator<Actor> iterator =this.listaActores.listIterator();
+		while(iterator.hasNext()) {
+			Actor aux = iterator.next();
+			System.out.print(aux.getNombreActor());
+			if(iterator.hasNext()) {
+				System.out.print(", ");
+			}
+			else {
+				System.out.println(".");
+			}
+		}
+		
 	}
 
 }
