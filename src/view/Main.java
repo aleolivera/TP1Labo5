@@ -68,6 +68,4 @@ public class Main {
 		entradaRecital.mostrarEntrada();
 		//System.out.println(entradaRecital.toString());
 	}
-	
-
 }
