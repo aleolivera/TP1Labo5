@@ -57,6 +57,7 @@ public class Entrada {
 	}
 	
 	public void mostrarEntrada() {
+	
 		System.out.println("_______________ENTRADA____________");
 		this.evento.mostrarEvento();
 		System.out.println("----------------------------------");
@@ -64,5 +65,6 @@ public class Entrada {
 		System.out.println("Tipo de entrada: " + this.tipoEntrada.getNombre());
 		System.out.println("importe: $"+ this.importe +"-.");
 		System.out.println("__________________________________");
+		System.out.println();
 	}
 }

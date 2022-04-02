@@ -60,6 +60,7 @@ public final class EventoDeportivo extends Evento {
 
 	@Override
 	protected void mostrarEvento() {
+	
 		System.out.println("EVENTO DEPORTIVO");
 		System.out.println("Fecha del evento: " + getFechaEvento().toString());
 		System.out.println(getNombre());
